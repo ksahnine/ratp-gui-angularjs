@@ -1,5 +1,5 @@
 # [Blog] IHM AngularJS de consultation des horaires du métro parisien
-Application **AngularJS** permettant de consulter les horaires du métro parisien développée pour illustrer l'article <i><a href="http://blog.inovia-conseil.fr/?p=185">De l'intérêt de Docker Compose (ex Fig) pour le développeur AngularJS</a></i>.
+Application **AngularJS** permettant de consulter les horaires du métro parisien illustrant l'article <i><a href="http://blog.inovia-conseil.fr/?p=185">De l'intérêt de Docker Compose (ex Fig) pour le développeur AngularJS</a></i>.
 
 ![Overview](https://raw.githubusercontent.com/ksahnine/ratp-gui-angularjs/master/docs/metro-gui.png "Overview")
 
@@ -16,7 +16,7 @@ Ce projet s'appuie sur l'API RESTful de consultation des horaires du métro dév
 git clone https://github.com/ksahnine/ratp-gui-angularjs.git
 cd ratp-gui-angularjs
 ```
- - Installation de dépendances :
+ - Installation des dépendances :
 ```
 npm install
 bower install
