@@ -1,0 +1,45 @@
+<div>
+    <form class="form-search" ng-submit="ctrl.prochainsPassages()">
+        <div ng-include src="'views/toolbar.html'"></div>
+        <div class="row">
+            <div class="input-group">
+                <div ligne-widget ng-model="ctrl.itineraire.ligne" class="input-group-btn"></div>
+                <input required ng-model="ctrl.itineraire.station" typeahead="s as s.nom for s in ctrl.stations | filter:$viewValue" type="text" class="form-control station" placeholder="Saisir le nom de la station" aria-label="Text input with segmented button dropdown">
+            </div><!-- /.input-group -->
+        </div><!-- /.row -->
+        <div class="row">
+            <div ng-controller="FavorisController as favCtrl" class="btn-group btn-sens pull-left">
+                <div class="btn-group" role="group">
+                    <button ng-click="favCtrl.ajouter(ctrl.itineraire)" type="button" class="btn btn-xs btn-warning" aria-label="Ajouter aux favoris">
+                        <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="btn-group btn-sens pull-right" ng-click="ctrl.prochainsPassages()">
+                <label class="btn btn-xs btn-warning" ng-model="ctrl.itineraire.sens" btn-radio="'A'">Aller</label>
+                <label class="btn btn-xs btn-warning" ng-model="ctrl.itineraire.sens" btn-radio="'R'">Retour</label>
+            </div>
+        </div><!-- /.row -->
+        <div class="row">
+            <table class="table table-striped passages">
+                <thead>
+                    <tr><th>#</th><th>Prochains passages</th></tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="p in ctrl.passages" ng-cloak><td><span ng-bind="$index"></span></td><td><span ng-bind="p.attente"></span></td></tr>
+                </tbody>
+            </table>
+        </div><!-- /.row -->
+        <div class="row">
+            <div class="direction"><span ng-cloak>{{ ctrl.itineraire.direction }}</span></div>
+        </div><!-- /.row -->
+    </form>
+</div>
+<style type="text/css">
+    .form-search { max-width: 26em; margin: auto; margin-top: 0.5em; }
+    .btn-toolbar { margin-bottom: 0.3em; }
+    .dropdown-menu { min-width: 0px !important; }
+    input.station { font-family: 'Lucida Grande'; font-size: 1.5em !important; }
+    div.direction { text-align: center; font-family: 'Lucida Grande'; font-size: 1.6em; background-color: #003E91; color: #fff;}
+    div.btn-sens { margin: 2px 0px 2px 0px; }
+</style>

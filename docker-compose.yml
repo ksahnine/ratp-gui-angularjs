@@ -1,0 +1,17 @@
+web:
+    image: nginx:1.7.9
+    volumes:
+        - ~/dev/ratp-gui-angularjs/dist:/usr/share/nginx/html
+        - ~/dev/ratp-gui-angularjs/conf/nginx-dev.conf:/etc/nginx/nginx.conf
+    ports:
+        - "80:80"
+
+ws:
+    image: ksahnine/ratp-rest-api:1.0
+    ports:
+        - "8080:8080"
+
+db:
+    image: fedora/couchdb
+    ports:
+        - "5984:5984"

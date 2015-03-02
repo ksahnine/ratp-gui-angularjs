@@ -1,0 +1,22 @@
+    <span><img ng-show="selected" ng-src="{{selected.iconUrl}}" class="selected" /></span>
+    <button ng-click="c.lignesMetro()" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        <span class="caret"></span>
+        <span class="sr-only">Toggle Dropdown</span>
+    </button>
+    <ul id="reseauMetro" class="dropdown-menu" role="menu">
+        <li ng-repeat="ligne in c.lignes" ng-cloak>
+        <div ng-click="onSelect(ligne)" title="{{ligne.etat}}" data-toggle="tooltip" data-placement="right"><img src="{{ligne.iconUrl}}" class="ligne" /></div>
+        </li>
+    </ul>
+<style type="text/css">
+    img.selected { width: 35px; height: 35px; padding: 0px 0px; margin: 0px 0px; padding-top: 2px; border: none; }
+    img.ligne { cursor: pointer; }
+    .dropdown-menu { min-width: 0px !important; }
+    .tooltip.top .tooltip-arrow {
+        bottom: 0; left: 50%; margin-left: -5px; border-top-color: #fff; border-width: 5px 5px 0;
+        border-right-color: #555;
+    }
+    .tooltip-inner {
+        font-size: 1.2em; color: #555; background: #fff; border: solid 1px #fff;
+    }
+</style>

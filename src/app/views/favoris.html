@@ -1,0 +1,32 @@
+<div>
+    <form class="form-favoris">
+        <div ng-include src="'views/toolbar.html'"></div>
+        <div class="row">
+            <table class="table table-striped passages">
+                <thead>
+                    <tr><th>Ligne</th><th>Station</th><th>Direction</th><th>Actions</th></tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="f in favCtrl.favoris" ng-cloak><td class="ligne"><img ng-src="{{f.ligne.iconUrl}}" /></td><td class="station"><span ng-bind="f.station.nom"></span></td><td class="station"><span ng-bind="f.direction"></span></td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <button ng-click="favCtrl.afficherTrafic(f.ligne.numero, f.station.id, f.sens)" type="button" class="btn btn-xs btn-info">
+                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                </button>
+                                <button ng-click="favCtrl.supprimer($index)" type="button" class="btn btn-xs btn-info">
+                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><!-- /.row -->
+    </form>
+</div>
+<style type="text/css">
+    .form-favoris { max-width: 26em; margin: auto; margin-top: 0.5em; }
+    .form-favoris td { vertical-align: middle !important; }
+    .form-favoris td.ligne img { width: 2.2em; height: 2.2em; }
+    .form-favoris td.station span { font-family: 'Lucida Grande'; font-size: 1.2em }
+</style>

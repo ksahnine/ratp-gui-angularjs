@@ -1,0 +1,18 @@
+<div ng-controller="UserController as userCtrl">
+    <form ng-submit="userCtrl.login()" class="form-login">
+        <h2 class="form-signin-heading"><span ng-bind="userCtrl.message" ng-cloak></span></h2>
+        <label for="inputLogin" class="sr-only">Identifiant</label>
+        <input ng-model="userCtrl.user.login" type="login" id="inputLogin" class="form-control" placeholder="Identifiant" required="" autofocus="">
+        <label for="inputPassword" class="sr-only">Mot de passe</label>
+        <input ng-model="userCtrl.user.password" type="password" id="inputPassword" class="form-control" placeholder="Saisir un mot de passe" required="">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> Se souvenir de moi
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Se connecter</button>
+    </form>
+</div>
+<style type="text/css">
+    .form-login { max-width: 26em; margin: auto; }
+</style>
