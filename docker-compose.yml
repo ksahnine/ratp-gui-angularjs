@@ -8,6 +8,8 @@ web:
 
 ws:
     image: ksahnine/ratp-rest-api:1.0
+    links:
+        - db
     ports:
         - "8080:8080"
 
