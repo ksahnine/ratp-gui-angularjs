@@ -1,10 +1,13 @@
 web:
     image: nginx:1.7.9
     volumes:
-        - ~/dev/ratp-gui-angularjs/dist:/usr/share/nginx/html
-        - ~/dev/ratp-gui-angularjs/conf/nginx-dev.conf:/etc/nginx/nginx.conf
+        - ./dist:/usr/share/nginx/html
+        - ./conf/nginx-dev.conf:/etc/nginx/nginx.conf
     ports:
         - "80:80"
+    links:
+        - ws
+        - db
 
 ws:
     image: ksahnine/ratp-rest-api:1.0
